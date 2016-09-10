@@ -1,0 +1,551 @@
+﻿@model AorangiPeak.Web.Areas.APManage.Models.TableReserveViewModel
+
+@{
+    ViewBag.Title = "Table Booking - Booking";
+}
+
+<link href="~/Areas/APManage/Content/booktable.css" rel="stylesheet">
+<link href="~/Areas/APManage/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+<style>
+    .Booked {
+        background-color:#CBE6A3 !important;
+    }
+
+    .Confirmed {
+        background-color:#CFEDFB !important;
+    }
+
+    .Cancelled {
+        background-color:#FFEBB6 !important;
+    }
+
+    .Expired {
+        background-color:#F0E3EF !important;
+    }
+    .error {
+        border:1px solid #C2272D;
+    }
+</style>
+
+<div class="container" style="overflow:hidden">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="breadcrumb">
+                <li>Booking<span class="divider"></span></li>
+                <li>Table Booking</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="widget">
+                <div class="widget-body">
+                    <div class="clearfix">
+                        <div class="col-lg-2" style=" margin-top:5px;margin-bottom:5px">
+                            <div class="btn-group">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#newBookingModal" style="width:100%; max-width:290px; ">
+                                    Add New
+                                    <i style="margin-left:6px" class="glyphicon glyphicon-plus
+    "></i>
+                                </button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-danger disabled" id="removeBtn" style="width:100%; max-width:290px" onclick="deleteBooking()">
+                                    Remove
+                                    <i style="margin-left:6px" class="glyphicon glyphicon-trash
+    "></i>
+                                </button>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Search", "ReserveTable", FormMethod.Get, new { id="searchForm"}))
+                        {
+                            <div class="btn-group search  col-lg-3" style="margin-left: 0px; padding-left:0px; margin-top:5px;margin-bottom:5px">
+                                <input class="pull-left" placeholder="Booking number..." type="search" name="num" style="width:200px;" id="search">
+                                <button class="btn-primary btn" type="submit" value="">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                                <a class="btn btn-primary" data-toggle="collapse" data-target="#advancedSearch">
+                                    <span class="glyphicon glyphicon-chevron-down"></span>
+                                </a>
+                            </div>
+                        }
+                        
+                    </div><!--clearfix-->
+
+                    <div class="space15"></div>
+                    @using (Html.BeginForm("AdvancedSearch", "ReserveTable", FormMethod.Get, new { id = "advancedSearchForm" }))
+                    {
+                        <div id="advancedSearch" class="collapse" style="border:1px solid #CCC">
+                            <div class="container" style="max-height:340px">
+                                <div class="row">
+                                    <div class="col-lg-8" style="padding:10px; padding-left:0px">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class='input-group date from_date' data-link-format="yyyy-mm-dd" data-date-format="dd MM yyyy" style="margin-bottom:5px; margin-top:5px;min-width:290px;">
+                                                    <input type='text' class="form-control" readonly="readonly" placeholder="Date from..." name="from" />
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class='input-group date to_date' data-link-format="yyyy-mm-dd" data-date-format="dd MM yyyy" style="margin-bottom:5px; margin-top:5px;min-width:290px;">
+                                                    <input type='text' class="form-control" readonly="readonly" placeholder="Date to..." name="to"/>
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="input-group" style="margin-bottom:5px; margin-top:5px">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-user"></span>
+                                                    </span>
+                                                    <input type="text" placeholder="First name or last name..." class="form-control" style="min-width:250px" name="name" />
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="input-group" style="margin-bottom:5px; margin-top:5px">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-envelope"></span>
+                                                    </span>
+                                                    <input type="text" placeholder="Email address..." class="form-control" style="min-width:250px" name="email" />
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="input-group" style="margin-bottom:5px; margin-top:5px">
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-earphone"></span>
+                                                    </span>
+                                                    <input style="min-width:250px;max-width:580px" type="text" class="form-control" placeholder="Phone number..." name="phone">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input type="text" placeholder="Number of people..." class="form-control" style="min-width:290px;margin-top:5px" name="num" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                @Html.DropDownList("status", Model.StatusSearchList as SelectList, new { @Class = "form-control", id = "statusSearch", style = "height:35px; min-width:290px;margin-top:5px" })
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input type="submit" class="btn btn-primary" style="height:35px;margin-top:5px;min-width:290px;width:100%" value="Search" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                
+
+                    <div class="space15"></div>
+                    @Html.Raw(ViewBag.Alert)
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr role="row">
+                                <th style="width: 15px;"></th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 152px;">Booking No.</th>
+                                <th rowspan="1" colspan="1" style="width: 200px;">Date/Time</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 170px;">Name</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 170px;">Email</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 121px;">Phone</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 115px;">No. Of People</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 165px;">Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @for (int i = 0; i < Model.TableBookingBriefDtos.Count(); i++)
+                            {
+                                <tr id="@Model.TableBookingBriefDtos[i].Id" >
+                                    <td class="@Model.TableBookingBriefDtos[i].Status">@Html.CheckBox("SelectBooking", new { value = Model.TableBookingBriefDtos[i].Id })</td>
+                                    <td><a style="font-weight:bold; font-size:16px" href="javascript:void()" onclick="updateBooking('@Model.TableBookingBriefDtos[i].Id')" data-toggle="modal" data-target="#updateBookingModal">@Model.TableBookingBriefDtos[i].Bookingnumber</a></td>
+                                    <td>@Model.TableBookingBriefDtos[i].Bookingdate &nbsp; @Model.TableBookingBriefDtos[i].Bookingtime</td>
+                                    <td>@Model.TableBookingBriefDtos[i].Firstname &nbsp; @Model.TableBookingBriefDtos[i].Lastname</td>
+                                    <td>@Model.TableBookingBriefDtos[i].Email</td>
+                                    <td>@Model.TableBookingBriefDtos[i].Phonenumber</td>
+                                    <td>@Model.TableBookingBriefDtos[i].Numberofadults Adults, @Model.TableBookingBriefDtos[i].Numberofchildren Children</td>
+                                    <td >@Model.TableBookingBriefDtos[i].Status</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div><!--widget-body-->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span6">
+        </div>
+        <div class="span6">
+            <div class="pull-left" style="margin-left:20px">
+                <span style="font-size:16px">
+                    @Html.Raw(ViewBag.TotalInfo)
+                </span>
+            </div>
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                <ul>
+                    @Html.Raw(ViewBag.PageInfo)
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--New Booking-->
+<div class="modal fade" id="newBookingModal" tabindex="-1" role="dialog"
+     aria-labelledby="newBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    New Booking
+                </h4>
+            </div>
+            @using (Html.BeginForm("Add", "ReserveTable", FormMethod.Post, new { id="newBookingForm", style = "margin-top:0px;padding-left:15px;padding-right:15px" }))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.NewTableBookingDto.Numberofadults, Model.NumberOfAdultsList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.NewTableBookingDto.Numberofchildren, Model.NumberOfChildrenList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.NewTableBookingDto.Bookingdate, new { @Class = "new_date form-control", size = "16", @readonly = "readonly", placeholder = "Booking date...", style = "background-color:#FFF;cursor:pointer;margin-bottom:0px;min-width:290px" })
+                        <label for="NewTableBookingDto_Bookingdate" class="error hidden"></label>
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.NewTableBookingDto.Bookingtime, Model.TimeList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div style="margin:15px 0px 15px 0px;">
+                        @Html.TextBoxFor(model => model.NewTableBookingDto.Firstname, new { @Class = "form-control", placeholder = "First Name", style = "min-width:290px; max-width:580px" })
+                        <label for="NewTableBookingDto_Firstname" class="error hidden"></label>
+                    </div>
+                    <div style="margin:15px 0px 15px 0px;">
+                        @Html.TextBoxFor(model => model.NewTableBookingDto.Lastname, new { @Class = "form-control", placeholder = "Last Name", style = "min-width:290px; max-width:580px" })
+                        <label for="NewTableBookingDto_Lastname" class="error hidden"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </span>
+                            @Html.TextBoxFor(model => model.NewTableBookingDto.Phonenumber, new { @Class = "form-control", placeholder = "Phone Number", style = "min-width:250px;max-width:580px" })
+                        </div>
+                        <label for="NewTableBookingDto_Phonenumber" class="error hidden"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            @Html.TextBoxFor(model => model.NewTableBookingDto.Email, new { @Class = "form-control", placeholder = "Email Address", style = "min-width:250px;" })
+                        </div>
+                        <label for="NewTableBookingDto_Email" class="error hidden"></label>
+                    </div>
+
+                    <div style="margin:10px 0px 10px 0px;">
+                        @Html.TextAreaFor(model => model.NewTableBookingDto.Request, new { @class = "form-control", placeholder = "Add special request(optional)", @row = 4, style = "max-width:580px" })
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" style="width:80px" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <input type="submit" class="btn btn-success" style="width:80px" value="Add">
+                </div>
+            }
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--End New Booking-->
+<!--New Booking-->
+<div class="modal fade" id="updateBookingModal" tabindex="-1" role="dialog"
+     aria-labelledby="updateBookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Update Booking
+                </h4>
+            </div>
+            @using (Html.BeginForm("Update", "ReserveTable", FormMethod.Post, new { style = "margin-top:0px;padding-left:15px;padding-right:15px" }))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.TableBookingDetailDto.Bookingnumber, new { @Class = "form-control", @readonly="readonly", style = "min-width:290px; max-width:580px;font-size:16px;font-weight:bold;background-color:white" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.TableBookingDetailDto.Numberofadults, Model.NumberOfAdultsList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.TableBookingDetailDto.Numberofchildren, Model.NumberOfChildrenList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.TableBookingDetailDto.Bookingdate, new { @Class = "new_date form-control", size = "16", @readonly = "readonly", style = "background-color:#FFF;cursor:pointer;margin-bottom:0px;min-width:290px" })
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.TableBookingDetailDto.Bookingtime, Model.TimeList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                    <div style="margin:15px 0px 15px 0px;">
+                        @Html.TextBoxFor(model => model.TableBookingDetailDto.Firstname, new { @Class = "form-control", placeholder = "First Name", style = "min-width:290px; max-width:580px" })
+                    </div>
+                    <div style="margin:15px 0px 15px 0px;">
+                        @Html.TextBoxFor(model => model.TableBookingDetailDto.Lastname, new { @Class = "form-control", placeholder = "Last Name", style = "min-width:290px; max-width:580px" })
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-earphone"></span>
+                            </span>
+                            @Html.TextBoxFor(model => model.TableBookingDetailDto.Phonenumber, new { @Class = "form-control", placeholder = "Phone Number", style = "min-width:250px;max-width:580px" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </span>
+                            @Html.TextBoxFor(model => model.TableBookingDetailDto.Email, new { @Class = "form-control", placeholder = "Email Address", style = "min-width:250px;" })
+                        </div>
+                    </div>
+
+                    <div style="margin:10px 0px 10px 0px;">
+                        @Html.TextAreaFor(model => model.TableBookingDetailDto.Request, new { @class = "form-control", @row = 4, style = "max-width:580px" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.TableBookingDetailDto.Status, Model.StatusList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+
+                    @Html.HiddenFor(model => model.TableBookingDetailDto.Id)
+                    @Html.HiddenFor(model => model.TableBookingDetailDto.Bookingnumber)
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" style="width:80px" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <input type="submit" class="btn btn-success" style="width:80px" value="Save">
+                </div>
+            }
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--End New Booking-->
+
+<script>
+    $(document).ready(function () {
+        $('#booking_header').addClass("active");
+        $('#booking').removeClass("collapse").addClass("collapsed");
+        $('#reserve_table').addClass("active");
+
+        $("#searchForm").submit(function (e) {
+            var number = $("#search").val();
+            if (number == "") {
+                alert("Please enter a booking number");
+                return false;
+            }
+            else {
+                $("#search").val(number.replace(/\s+/g, ""));
+                return true;
+            }
+        });
+
+        $("#newBookingForm").validate({
+            rules: {
+                'NewTableBookingDto.Bookingdate': { required: true },
+                'NewTableBookingDto.Firstname': { required: true },
+                'NewTableBookingDto.Lastname': { required: true },
+                'NewTableBookingDto.Phonenumber': { required: true, digits: true },
+                'NewTableBookingDto.Email': { required: true, email: true }
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript" src="~/Areas/APManage/Scripts/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+    $('.from_date').datetimepicker({
+        //language:  'zh-TW',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        initialDate: new Date()
+    });
+
+    $('.to_date').datetimepicker({
+        //language:  'zh-TW',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        initialDate: new Date()
+    });
+
+    $('.new_date').datetimepicker({
+        //language:  'zh-TW',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        startDate: new Date(),
+        linkformat: "dd MM yyyy",
+        format: "dd MM yyyy",
+        initialDate: new Date()
+    });
+</script>
+<script>
+    $("#alert").fadeTo(3000, 500).slideUp(500, function () {
+        $("#alert").hide();
+    });
+
+    $("input[name = 'SelectBooking']").click(function () {
+        var checked = 0;
+        
+        $("input[name = 'SelectBooking']").each(function(){
+            if (this.checked) {
+                checked = 1;
+            }
+        });
+
+        if (checked==0) {
+            $("#removeBtn").addClass("disabled");
+        }
+        else {
+            $("#removeBtn").removeClass("disabled");
+        }
+    });
+
+    function updateBooking(bid) {
+        $.ajax({
+            url: '/ReserveTable/Update',
+            cache: false,
+            timeout: 3600,
+            async: false,
+            type: "Get",
+            data: "bid=" + bid,
+            dataType: "json",
+            success: function (result) {
+                $("#TableBookingDetailDto_Numberofadults").val(result.Numberofadults);
+                $("#TableBookingDetailDto_Numberofchildren").val(result.Numberofchildren);
+                $("#TableBookingDetailDto_Bookingdate").val(result.Bookingdate);
+                $("#TableBookingDetailDto_Bookingtime").val(result.Bookingtime);
+                $("#TableBookingDetailDto_Firstname").val(result.Firstname);
+                $("#TableBookingDetailDto_Lastname").val(result.Lastname);
+                $("#TableBookingDetailDto_Phonenumber").val(result.Phonenumber);
+                $("#TableBookingDetailDto_Email").val(result.Email);
+                $("#TableBookingDetailDto_Request").val(result.Request);
+                $("#TableBookingDetailDto_Status").val(result.Status);
+                $("#TableBookingDetailDto_Id").val(result.Id);
+                $("#TableBookingDetailDto_Bookingnumber").val(result.Bookingnumber);
+
+                if (result.Status == 1 || result.Status == 3)
+                {
+                    $("#TableBookingDetailDto_Status").attr('disabled', true);
+                }
+                else
+                {
+                    $("#TableBookingDetailDto_Status").attr('disabled', false);
+                }
+            }
+        });
+    }
+
+    function deleteBooking() {
+        var status = confirm("Are you sure to delete the booking?");
+        if (!status) return false;
+
+        var selectedBookings = new Array();
+
+        $("input[name='SelectBooking']:checked").each(function (key, obj) {
+            selectedBookings[key] = obj.value;
+        });
+
+        $.ajax({
+            url: '/ReserveTable/Delete',
+            cache: false,
+            timeout: 3600,
+            async: false,
+            type: "Post",
+            data: { "bookings": selectedBookings },
+            dataType: "json",
+            success: function (result) {
+                if (result == "Success") {
+                    $.grep(selectedBookings, function (val) {
+                        $("#" + val).hide('slow');
+                    });
+                }
+                else {
+                    alert('Delete Failed!');
+                }
+            }
+        });
+    }
+
+    function searchBooking() {
+        var number = $("#search").val();
+
+        $.ajax({
+            url: '/ReserveTable/Search',
+            cache: false,
+            timeout: 3600,
+            async: false,
+            type: "Get",
+            data: "page=1&num=" + number,
+            dataType: "json",
+            success: function (result) {
+                if (result == "Success") {
+                    alert('Search Success!');
+                }
+                else {
+                    alert('Search Failed!');
+                }
+            }
+        });
+    }
+</script>

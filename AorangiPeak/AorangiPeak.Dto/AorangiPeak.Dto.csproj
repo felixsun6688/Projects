@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A93843B-EBAE-4608-98CC-0E65FF48B9CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AorangiPeak.Dto</RootNamespace>
+    <AssemblyName>AorangiPeak.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\Function\FunctionBriefDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Function\FunctionDeleteDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Function\FunctionDetailDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Function\NewFunctionDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Menu\MenuBriefDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Menu\MenuDeleteDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Menu\MenuDetailDtoToMenuEntity.cs" />
+    <Compile Include="Converter\Menu\NewMenuDtoToMenuEntity.cs" />
+    <Compile Include="Converter\TableBooking\NewTableBookingToEntity.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingChildrenToEntity.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingDetailDtoToEntity.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingEntityToBriefDto.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingEntityToDetailDto.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingAdultsToEntity.cs" />
+    <Compile Include="Converter\TableBooking\TableBookingTimeToEntity.cs" />
+    <Compile Include="Converter\User\NewUserDtoToUserEntity.cs" />
+    <Compile Include="Converter\User\UserDetailDtoToUserEntity.cs" />
+    <Compile Include="Converter\User\UserEntityToUserDetailDto.cs" />
+    <Compile Include="FunctionDto\FunctionBriefDto.cs" />
+    <Compile Include="FunctionDto\FunctionDeleteDto.cs" />
+    <Compile Include="FunctionDto\FunctionDetailDto.cs" />
+    <Compile Include="FunctionDto\NewFunctionDto.cs" />
+    <Compile Include="GalleryDto\GalleryBriefDto.cs" />
+    <Compile Include="GalleryDto\GalleryDetailDto.cs" />
+    <Compile Include="GalleryDto\NewGalleryDto.cs" />
+    <Compile Include="IDto.cs" />
+    <Compile Include="IInputDto.cs" />
+    <Compile Include="IOutputDto.cs" />
+    <Compile Include="MapperConfig.cs" />
+    <Compile Include="MappingProfile\FunctionMappingProfile.cs" />
+    <Compile Include="MappingProfile\MenuMappingProfile.cs" />
+    <Compile Include="MappingProfile\RoleMappingProfile.cs" />
+    <Compile Include="MappingProfile\TableBookingMappingProfile.cs" />
+    <Compile Include="MappingProfile\UserMappingProfile.cs" />
+    <Compile Include="MenuDto\MenuBriefDto.cs" />
+    <Compile Include="MenuDto\MenuDeleteDto.cs" />
+    <Compile Include="MenuDto\MenuDetailDto.cs" />
+    <Compile Include="MenuDto\NewMenuDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleDto\NewRoleDto.cs" />
+    <Compile Include="RoleDto\RoleBriefDto.cs" />
+    <Compile Include="RoleDto\RoleDetailDto.cs" />
+    <Compile Include="TableBookingDto\NewTableBookingDto.cs" />
+    <Compile Include="TableBookingDto\TableBookingBriefDto.cs" />
+    <Compile Include="TableBookingDto\TableBookingChildrenDto.cs" />
+    <Compile Include="TableBookingDto\TableBookingDetailDto.cs" />
+    <Compile Include="TableBookingDto\TableBookingAdultsDto.cs" />
+    <Compile Include="TableBookingDto\TableBookingTimeDto.cs" />
+    <Compile Include="UserDto\LoginUserDto.cs" />
+    <Compile Include="UserDto\NewUserDto.cs" />
+    <Compile Include="UserDto\UserBriefDto.cs" />
+    <Compile Include="UserDto\UserDetailDto.cs" />
+    <Compile Include="UserProfileDto\UserProfileDto.cs" />
+    <Compile Include="Validator\LoginUserValidator.cs" />
+    <Compile Include="Validator\ModifyTableBookingValidator.cs" />
+    <Compile Include="Validator\NewTableBookingValidator.cs" />
+    <Compile Include="Validator\NewUserValidator.cs" />
+    <Compile Include="Validator\UpdateUserValidator.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AorangiPeak.Domain.Core\AorangiPeak.Domain.Core.csproj">
+      <Project>{0160d647-7276-43cc-a75a-8457b19819d7}</Project>
+      <Name>AorangiPeak.Domain.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

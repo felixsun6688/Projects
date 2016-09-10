@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Aorangi Peak Restaurant";
+}
+
+@model AorangiPeak.Web.Models.RestaurantModel
+
+<div class="dining_banner">
+    <img src="~/Images/rest.png" class="carousel-inner img-responsive" />
+</div>
+
+<div class="menus">
+    <div class="inline_nav">
+        <ul style="height:35px">
+            <li style="float:left;list-style:none;margin-left:-45px"><h4>RESTAURANT</h4></li>
+            <li style="float:right;list-style:none;">
+
+                <h4><img src="~/Images/share1.png" style="margin-right:5px" /><a href="#" class="share_btn">SHARE</a></h4>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-bottom:20px">
+        @for (int i = 0; i < Model.MenuBriefDtos.Count(); i++)
+        {
+            <div class="col-lg-4">
+                <div>
+                    <img src="@Model.MenuBriefDtos[i].Firstimg" class="carousel-inner img-responsive" />
+                </div>
+                <div class="menu_text">
+                    <h3><a href="cafe_menu.html" style="color:#FFF">@Model.MenuBriefDtos[i].Menuname</a></h3>
+                    <p>@Model.MenuBriefDtos[i].Introduction</p>
+                    <p><a href="~/Restaurant/Menu/?mid=@Model.MenuBriefDtos[i].Id"><button class="btn btn-default">MORE</button></a></p>
+                </div>
+            </div>
+        }
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Menu - Restaurant";
+}
+
+@model AorangiPeak.Web.Areas.APManage.Models.MealViewModel
+
+<div class="container" style="overflow:hidden">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="breadcrumb">
+                <li>Restaurant<span class="divider"></span></li>
+                <li>Menu</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="widget">
+                <div class="widget-body">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <a href="~/APManage/Meal/AddMenu">
+                                <button class="btn btn-success">
+                                    Add New
+                                    <i style="margin-left:6px" class="glyphicon glyphicon-plus
+"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div><!--clearfix-->
+
+                    <div class="space15"></div>
+
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr role="row">
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 252px;">Image</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 200px;">Menu Name</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 377px;">Introduction</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 170px;">Status</th>
+                                <th role="columnheader" rowspan="1" colspan="1" style="width: 150px;">Option</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @for (int i = 0; i < Model.MenuBriefDtos.Count(); i++)
+                            {
+                                <tr class="odd">
+                                    <td>
+                                        <img src="@Model.MenuBriefDtos[i].Firstimg" width="250" />
+                                    </td>
+                                    <td>
+                                        <a href="~/APManage/Meal/UpdateMenu/?mid=@Model.MenuBriefDtos[i].Id">
+                                            @Model.MenuBriefDtos[i].Menuname
+                                        </a>
+                                    </td>
+                                    <td>@Model.MenuBriefDtos[i].Introduction</td>
+                                    <td>@Model.MenuBriefDtos[i].Status</td>
+                                    <td>
+                                        <a href="#">Inactive</a> |
+                                        <a href="~/APManage/Meal/DeleteMenu/?mid=@Model.MenuBriefDtos[i].Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span6"></div>
+        <div class="span6">
+            <div class="dataTables_paginate paging_bootstrap pagination">
+                <ul>
+                    <li class="prev disabled">
+                        <a href="#" class="btn btn-default">← Prev</a>
+                    </li>
+                    <li class="active">
+                        <a href="#" class="btn btn-default disabled">1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default">2</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default">3</a>
+                    </li>
+                    <li class="next">
+                        <a href="#" class="btn btn-default">Next → </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#restaurant_header').addClass("active");
+        $('#restaruant').removeClass("collapse").addClass("collapsed");
+        $('#menu').addClass("active");
+    });
+</script>

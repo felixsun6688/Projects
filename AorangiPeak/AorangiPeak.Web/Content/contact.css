@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+input.form-control,textarea.form-control{
+	border-radius:0px;
+	width:100%;
+	max-width:768px;
+	margin-bottom:20px;
+}
+
+textarea.form-control{
+	min-height:402px;
+}
+
+input.submit{
+	border-radius:0px;
+	width:100%;
+	max-width:768px;
+	background:#26384C;
+	color:#fff;
+	height:40px;
+	margin-bottom:20px;
+}
+
+.list-group-item{
+	padding: 0px 15px;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 90%; 
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	max-width:500px;
+}
+
+#gmap_canvas img{
+	max-width:none!important;
+	background:none!important
+}
+
+.social_media{
+	margin-top:25px;
+}
+
+@media (max-width: 480px){
+	.dining_banner{
+		display:none;
+	}
+	.menus{
+		margin-left:0px;
+		margin-right:0px;
+	}
+	
+	textarea.form-control{
+		min-height:280px;
+	}
+}
+

@@ -1,0 +1,7 @@
+E:\MyProject\AorangiPeak\AorangiPeak.Common\bin\Debug\AorangiPeak.Common.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Common\bin\Debug\AorangiPeak.Common.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Common\bin\Debug\log4net.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Common\bin\Debug\log4net.xml
+E:\MyProject\AorangiPeak\AorangiPeak.Common\obj\Debug\AorangiPeak.Common.csprojResolveAssemblyReference.cache
+E:\MyProject\AorangiPeak\AorangiPeak.Common\obj\Debug\AorangiPeak.Common.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Common\obj\Debug\AorangiPeak.Common.pdb

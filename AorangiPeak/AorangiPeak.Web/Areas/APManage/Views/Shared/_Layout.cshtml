@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aorangi Peak Administration">
+    <title>@ViewBag.Title - Aorangi Peak Administration</title>
+    <link href="~/Areas/APManage/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/APManage/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Areas/APManage/Content/index.css" rel="stylesheet">
+    <link href="~/Areas/APManage/Content/user.css" rel="stylesheet">
+    <link href="~/Areas/APManage/Content/summernote.css" rel="stylesheet" />
+    <script src="~/Areas/APManage/Scripts/jquery.min.js"></script>
+    <script src="~/Areas/APManage/Scripts/bootstrap.min.js"></script>
+    <script src="~/Areas/APManage/Scripts/jquery.validate.min.js"></script>
+</head>
+<body>
+    <!-- START THE NAVBAR -->
+
+
+    <div class="container" style="overflow-x:hidden;">
+        <div class="row">
+            <div class="sidebar" style="display:block;">
+                <div class="nav-side-menu">
+                    <div class="menu-list">
+                        <ul id="menu-content" class="menu-content collapse out">
+                            <div class="logo">
+                                <a href="/" target="_blank"><img src="~/Areas/APManage/Images/login2.png" width="120" /></a>
+                            </div>
+
+                            <li data-toggle="collapse" data-target="#profile" class="collapsed" style="height:60px; padding-top:8px">
+                                <a href="#" style="padding-left:8px;">
+                                    <img src="~/Areas/APManage/Images/touxiang.png" class="img-circle" width="40" height="40" />
+                                    <span class="username">
+                                        @ViewBag.LoginUser - @ViewBag.LoginRole
+                                    </span>
+                                    <span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span>
+                                </a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="profile">
+                                <li>
+                                    <a href="#">My Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#">My Setting</a>
+                                </li>
+                                <li>
+                                    <a href="#">Log Out</a>
+                                </li>
+                            </ul>
+
+                            <li id="dashboard">
+                                <a href="/APManage/Default/Index">
+                                    <i class="glyphicon glyphicon-dashboard"></i>Dashboard
+                                </a>
+                            </li>
+
+                            <li data-toggle="collapse" data-target="#booking" class="collapsed" id="booking_header">
+                                <a href="#"><i class="glyphicon glyphicon-list-alt"></i>Booking<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="booking">
+                                <li id="reserve_table">
+                                    <a href="/APManage/ReserveTable">Table Booking</a>
+                                </li>
+                                <li>
+                                    <a href="#">Room Booking</a>
+                                </li>
+                                <li>
+                                    <a href="#">Function Booking</a>
+                                </li>
+                            </ul>
+
+                            <li data-toggle="collapse" data-target="#restaruant" class="collapsed" id="restaurant_header">
+                                <a href="javascript:void();"><i class="glyphicon glyphicon-cutlery"></i>Restaruant<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="restaruant">
+                                <li id="menu"><a href="/APManage/Meal">Menu</a></li>
+                                <li><a href="#">Category</a></li>
+                                <li><a href="#">Food</a></li>
+                                <li><a href="#">Drink</a></li>
+                                <li><a href="#">Schedule</a></li>
+                            </ul>
+
+                            <li data-toggle="collapse" data-target="#accommodation" class="collapsed">
+                                <a href="#"><i class="glyphicon glyphicon-home"></i>Accommodation<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="accommodation">
+                                <li><a href="#">Type</a></li>
+                                <li><a href="#">Price</a></li>
+                                <li><a href="#">Extra</a></li>
+                                <li><a href="#">Calendar</a></li>
+                            </ul>
+
+                            <li data-toggle="collapse" data-target="#function" class="collapsed">
+                                <a href="#"><i class="glyphicon glyphicon-heart"></i>Function<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="function">
+                                <li><a href="#">Functions</a></li>
+                                <li><a href="#">Extra</a></li>
+                            </ul>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-glass"></i>Attraction
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-picture"></i>Gallery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-comment"></i>Message
+                                </a>
+                            </li>
+
+                            <li data-toggle="collapse" data-target="#user" class="collapsed" id="user_header">
+                                <a href="javascript:void();"><i class="glyphicon glyphicon-user"></i>User<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="user">
+                                <li id="users"><a href="/APManage/User/Index">Users</a></li>
+                                <li><a href="#">Roles</a></li>
+                            </ul>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-trash"></i>Trash
+                                </a>
+                            </li>
+
+                            <li data-toggle="collapse" data-target="#setting" class="collapsed">
+                                <a href="#"><i class="glyphicon glyphicon-cog"></i>Setting<span class="glyphicon glyphicon-chevron-right" style="float:right; margin-right:10px; margin-top:10px"></span></a>
+                            </li>
+
+                            <ul class="sub-menu collapse" id="setting">
+                                <li><a href="#">General</a></li>
+                                <li><a href="#">Email</a></li>
+                                <li><a href="#">Language</a></li>
+                                <li><a href="#">Countries</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Social Media</a></li>
+                            </ul>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-stats"></i>Statistics
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-floppy-disk"></i>Data
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-left:0px;margin-left:257px" class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12" style="padding-left:0px">
+                            <div style="position:fixed;top:0px;height:60px;background:#4C80C1;width:100%;z-index:10;">
+                                <button type="button" class="navbar-toggle toggle_btn" onClick="ShowSideBar('.sidebar')">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" style="overflow:hidden; margin-top:74px; padding-left:0px;padding-right:10px">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Areas/APManage/Scripts/summernote.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        $('#menuContent').summernote({
+            height: 400,
+            minHeight: null,
+            maxHeight: null,
+            focus: false,
+        });
+    });
+    </script>
+    <script>
+	function ShowSideBar(sidebar){
+		if($(sidebar).css("display")=="none"){
+		    $(sidebar).show();
+			$(".content").css("margin-left","257px");
+		}
+		else{
+		    $(sidebar).hide();
+			$(".content").css("margin-left","0px");
+		}
+	}
+    </script>
+    
+</body>
+</html>

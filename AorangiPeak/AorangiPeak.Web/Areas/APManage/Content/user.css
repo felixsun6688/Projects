@@ -1,0 +1,63 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.breadcrumb{
+	border-radius:0px;
+}
+
+.space15{
+	height: 15px !important;
+    clear: both;
+}
+
+.span6{
+	height: 6px !important;
+    clear: both;
+}
+
+.dataTables_paginate {
+    margin-top: 5px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: -4px !important;
+}
+
+div.dataTables_paginate {
+    float: right;
+    margin-right: 20px;
+}
+
+.pagination {
+    margin: 10px 0;
+}
+
+.pagination ul>li {
+    display: inline;
+	line-height:20px;
+}
+
+.btn{
+	border-radius:0px;
+}
+.row{
+	margin-left:0px;
+	padding-right:10px;
+}
+
+.add_form{
+    margin-top:0px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.form-item {
+    margin:15px 0px 15px 0px;
+}
+
+.form-item input {
+    min-width:290px;
+    max-width:580px;
+}
+
+.form-control, .modal-content{
+    border-radius: 0px;
+}

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "BookResult";
+}
+
+@model  AorangiPeak.Dto.TableBookingDto.TableBookingDetailDto
+
+<div class="container">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10" style="font-size:16px">
+        <p>
+            Hi @Model.Firstname, your reservation has been successful! Your Booking Number is <h2><strong>@Model.Bookingnumber</strong></h2>.
+        </p>
+        <p>
+            <h3>Reservation Information</h3>
+            Number of people: @Model.Numberofpeople<br />
+            Time: @Model.Bookingdate, @Model.Bookingtime<br />
+            Name: @Model.Firstname @Model.Lastname<br />
+            Phone Number: @Model.Phonenumber<br />
+            Email Address: @Model.Email<br />
+            Special Request: @Model.Request
+        </p>
+        <p>
+            If you want to change your reservation, please <a href="~/TableBooking/Modify?bookid=@Model.Id">click here</a> or email to us.
+        </p>
+    </div>
+    <div class="col-lg-1"></div>
+</div>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Aorangi Peak Restaurant";
+}
+
+@model AorangiPeak.Dto.MenuDto.MenuDetailDto
+
+<div class="dining_banner">
+    <img src="~/Images/rest.png" class="carousel-inner img-responsive" />
+</div>
+
+<div class="menus">
+    <div class="inline_nav">
+        <h4><a style="color:#5a5a5a" href="~/Restaurant/Index">RESTAURANT</a> / @Model.Menuname</h4>
+    </div>
+    <div class="container" style="background:#fbfbfc; border-top:2px solid #CCC;font-family:'Times New Roman', Times, serif">
+        <div class="menutitle">
+            <p>
+                <h3 style="font-family:'Times New Roman', Times, serif; font-weight:bold; font-size:30px">- @Model.Menuname -</h3>
+            </p>
+        </div>
+
+        <div class="row">
+            @Html.Raw(Model.Content);
+        </div>
+    </div>
+</div>

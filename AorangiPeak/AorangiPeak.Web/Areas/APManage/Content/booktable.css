@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+.all{
+	margin-right:5px;
+	width:90px;
+}
+
+.booked{
+	margin-right:5px;
+	width:90px;
+}
+
+.search{
+	margin-left:20px;
+}
+
+.search input{
+	height:35px;
+	padding-left:5px;
+	border:1px solid #CCC;
+	border-right:none;
+	width:250px;
+}
+
+.search button{
+	height:35px; 
+	width:40px;
+}
+
+.search a{
+	height:35px; 
+	width:35px;
+	margin-left:5px; 
+	padding-left:10px;
+	padding-top:9px;
+}
+
+.search a span{
+	color:#fff;
+	border-left: none;
+}
+
+.dropdown-menu{
+	max-width:213px;
+}
+
+.form-control,.input-group-addon{
+	border-radius:0px;
+}
+
+.modal-content{
+	border-radius:0px;
+}

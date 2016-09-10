@@ -1,0 +1,105 @@
+﻿<div class="foot">
+    <div class="container">
+        <div style="text-align:center; margin:50px auto;color:#919191">
+            <p>
+                353 Mountain Rd,Western Heights,Rotorua,New Zealand &nbsp;
+                Tel: 64 07-3470036 &nbsp;  Email: aorangipeak@xtra.co.nz
+            </p>
+            <p style="margin-top:25px"><h3>- FOLLOW US -</h3></p>
+            <div class="soci">
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/aorangipeak" target="_blank" class="facebook"></a></li>
+                    <li><a href="https://twitter.com/aorangipeak" target="_blank" class="twitter"></a></li>
+                    <li><a href="#" class="insta"></a></li>
+                    <li><a href="https://plus.google.com/+AorangipeakCoNzweb" target="_blank" class="google"></a></li>
+                    <li><a href="#" class="wechat"></a></li>
+                    <li><a href="#" class="sina"></a></li>
+                </ul>
+            </div>
+
+            <hr>
+            <p class="footmenu">
+                <a href="#">ABOUT US</a> | <a href="#">CAREERS</a> | <a href="#">HELP</a> | <a href="#">CONTACT US</a>
+            </p>
+            <p class="footmenu">
+                <a>Terms and Conditions</a> &nbsp; <a>Privacy Policy</a>
+            </p>
+            <p style="text-align:right">
+                <a class="gotoTop btn btn-info" href="#"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/stickUp.min.js"></script>
+<script type="text/javascript">
+		jQuery(function($) {
+			$(document).ready( function() {
+			$('.navbar-wrapper').stickUp();
+			});
+		});
+</script>
+<script src="~/Scripts/idangerous.swiper.min.js"></script>
+<script>
+	  var mySwiper = new Swiper('.swiper-container',{
+		pagination: '.pagination',
+		loop:true,
+		grabCursor: true,
+		paginationClickable: true,
+		autoplay:8000,
+		speed: 1000
+	  })
+	  $('.left').on('click', function(e){
+		e.preventDefault()
+		mySwiper.swipePrev()
+	  })
+	  $('.right').on('click', function(e){
+		e.preventDefault()
+		mySwiper.swipeNext()
+	  })
+</script>
+<script src="~/Scripts/animatescroll.min.js"></script>
+<script type="text/javascript">
+		$(function(){
+			$(".gotoTop").click(function(){
+				$('body').animatescroll();
+			})
+		})
+</script>
+
+<script src="~/Scripts/jquery.xgallerify.min.js"></script>
+<script src="~/Scripts/photo-gallery.js"></script>
+<script type="text/javascript">
+		var gallery = $('.photos').gallerify({
+			margin:10,
+			mode:'default',
+			lastRow:'adjust'
+		});
+</script>
+<script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="~/Scripts/locals/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	 $('.form_date').datetimepicker({
+		//language:  'zh-TW',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0,
+		startDate: new Date(),
+		linkformat: "yyyy-mm-dd",
+		format: "yyyy-mm-dd",
+		initialDate: new Date()
+    });
+</script>
+<script>
+    $(window).load(
+         function() {
+             $("@ViewBag.ActiveItem").addClass("active");
+         }
+      );
+</script>

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Aorangi Peak Restaurant";
+}
+
+@model AorangiPeak.Web.Models.TableBookingModel
+
+<div class="dining_banner">
+    <img src="~/Images/dining_banner.png" class="carousel-inner img-responsive" />
+</div>
+
+<div class="menus">
+    <div class="inline_nav">
+        <h4>RESTAURANT / RESERVATION</h4>
+    </div>
+    <div class="container" style="min-height:300px;background:#fbfbfc;border-top:2px solid #CCC">
+        <div class="menutitle">
+            <p>
+                <h3>MODIFY RESERVATION</h3>
+            </p>
+        </div>
+        <div class="row" style="margin-bottom:50px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="text-align:justify">
+                @using (Html.BeginForm("Modify", "TableBooking", FormMethod.Post, new { @class = "form-inline table_booking", id = "newuser_form" }))
+                {
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.TableBookingDetailDto.Numberofpeople, Model.NumberOfPeopleList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                    </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.TableBookingDetailDto.Bookingdate, new { @Class = "form-control form_date", size = "16", @readonly = "readonly", placeholder = ViewBag.DefaultDate, style = "background-color:#FFF;cursor:pointer;margin-bottom:0px" })
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.TableBookingDetailDto.Bookingtime, Model.TimeList as SelectList, new { @Class = "form-control", style = "min-width:190px" })
+                        </div>
+
+                        <div style="margin:10px 0px 10px 0px;height:34px">
+                            @Html.TextBoxFor(model => model.TableBookingDetailDto.Firstname, new { @Class = "form-control", placeholder = "First Name", style = "min-width:290px;" })
+                        </div>
+
+                        <div style="margin:0px 0px 0px 0px;height:34px">
+                            @Html.TextBoxFor(model => model.TableBookingDetailDto.Lastname, new { @Class = "form-control", placeholder = "Last Name", style = "min-width:290px;" })
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                </span>
+                                @Html.TextBoxFor(model => model.TableBookingDetailDto.Phonenumber, new { @Class = "form-control", placeholder = "Phone Number", style = "min-width:290px;" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                @Html.TextBoxFor(model => model.TableBookingDetailDto.Email, new { @Class = "form-control", placeholder = "Email Address", style = "min-width:290px;" })
+                            </div>
+                        </div>
+
+                        <div style="margin:10px 0px 10px 0px;">
+                            @Html.TextAreaFor(model => model.TableBookingDetailDto.Request, new { @class = "form-control", placeholder = "Add special request(optional)", @row = 4 })
+                        </div>
+
+                        @Html.HiddenFor(model => model.TableBookingDetailDto.Id)
+
+                        <div class="form-group">
+                            <input type="submit" class="submit btn btn-default" value="SAVE RESERVATION" style="min-width:300px" />
+                        </div>
+                        <div class="form-group">
+                            <p style="line-height:25px; color:#999">By clicking "COMPLETE RESERVATION" you agree to the <a href="#"> Aorangi Peak Resturant Terms of Use </a> and <a href="#">Privacy Policy</a>.</p>
+                        </div>
+                }
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+

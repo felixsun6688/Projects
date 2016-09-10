@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Menu - Restaurant";
+}
+
+@model AorangiPeak.Dto.MenuDto.MenuDetailDto
+
+<div class="container" style="overflow:hidden">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="breadcrumb">
+                <li>Restaurant<span class="divider"></span></li>
+                <li>@Html.ActionLink("Menu", "Index")<span class="divider"></span></li>
+                <li>@Model.Menuname</li>
+            </ul>
+        </div>
+    </div>
+    @using (Html.BeginForm("UpdateMenu", "Meal", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Menuname, new { @Class = "form-control", placeholder = "Menu title...", style = "height:40px", required = "required", autofocus = "autofocus" })
+                </div>
+                <div class="form-group">
+                    @Html.TextAreaFor(model => model.Introduction, new { @class = "form-control", style = "height:150px", placeholder = "Introduction..." })
+                </div>
+                <div class="form-group">
+                    @Html.TextAreaFor(model => model.Content, new { @class = "form-control", id = "menuContent", placeholder = "Content..." })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Firstimg, new { @Class = "form-control", placeholder = "Image1...", style = "height:40px", required = "required" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Secondimg, new { @Class = "form-control", placeholder = "Image2...", style = "height:40px", required = "required" })
+                </div>
+                    @Html.HiddenFor(model=>model.Id, new { id="menu_id"})
+            </div>
+            <div class="col-lg-4">
+                <input type="submit" class="btn btn-success submit" value="Save" style="min-width:400px;" />
+                <input type="button" class="btn btn-warning submit" value="Publish" style="min-width:400px;margin-top:15px" />
+                <input type="button" class="btn btn-default submit" value="Cancel" style="min-width:400px;margin-top:15px" />
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#restaurant_header').addClass("active");
+        $('#restaruant').removeClass("collapse").addClass("collapsed");
+        $('#menu').addClass("active");
+    });
+</script>

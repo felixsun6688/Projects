@@ -1,0 +1,43 @@
+﻿@charset "utf-8";
+/* CSS Document */
+@import "stickup.css";
+@import "sidebar.css";
+
+
+.panel {
+    border-radius: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn_addPic {
+    display: inline-block;
+    position: relative;
+    height: 39px;
+    overflow: hidden;
+    padding: 0 30px;
+    border: 1px solid #337AB7;
+    background: none repeat scroll 0 0 #337AB7;
+    color: #FFF;
+    font: 14px/39px 'MicroSoft Yahei','Simhei';
+    cursor: pointer;
+    text-align: center;
+}
+
+    .btn_addPic:hover {
+         color: #FFF;
+    }
+
+.filePrew {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 39px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity: 0);
+}

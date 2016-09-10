@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+@model AorangiPeak.Web.Areas.APManage.Models.UserViewModel
+
+<div class="row">
+    <div class="col-lg-12">
+        <ul class="breadcrumb">
+            <li>User<span class="divider"></span></li>
+            <li>Users<span class="divider"></span></li>
+            <li>Add New</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="widget">
+            <div class="widget-body">
+
+                <div style="max-width:600px">
+                    @using (Html.BeginForm("Add", "User", FormMethod.Post, new { @class = "add_form", id = "newuser_form" }))
+                    {
+                        <div class="modal-body">
+                            <div class="form-item">
+                                @Html.TextBoxFor(model => model.NewUserDto.Email, new { @Class = "form-control", placeholder = "Email Address", autofocus = "autofocus" })
+                                @Html.ValidationMessage("Email")
+                            </div>
+
+                            <div class="form-item">
+                                @Html.TextBoxFor(model => model.NewUserDto.Username, new { @Class = "form-control", placeholder = "User Name" })
+                                @Html.ValidationMessage("Username")
+                            </div>
+
+                            <div class="form-item">
+                                @Html.PasswordFor(model => model.NewUserDto.Userpwd, new { @Class = "form-control", placeholder = "Password" })
+                                @Html.ValidationMessage("Userpwd")
+                            </div>
+
+                            <div class="form-item">
+                                @Html.PasswordFor(model => model.NewUserDto.Confirmpwd, new { @Class = "form-control", placeholder = "Confirm Password" })
+                                @Html.ValidationMessage("Confirmpwd")
+                            </div>
+
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.NewUserDto.Roleid, Model.RoleList as SelectList, new { @Class = "form-control" })
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <a href="~/APManage/User" style="width:80px" class="btn btn-default" data-dismiss="modal">
+                                Back
+                            </a>
+                            <input type="submit" class="btn btn-success" style="width:80px" value="Add" id="submit">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

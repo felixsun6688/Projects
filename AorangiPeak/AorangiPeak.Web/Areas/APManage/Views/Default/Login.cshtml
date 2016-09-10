@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+@model AorangiPeak.Web.Areas.APManage.Models.UserViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login - Aorangi Peak Administration</title>
+    <link href="~/Areas/APManage/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/APManage/Content/login.css" rel="stylesheet">
+    <link href="~/Areas/APManage/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="card card-container">
+            <p class="login-title">
+                <img src="~/Areas/APManage/Images/login.png" width="270" />
+            </p>
+            <img id="profile-img" class="profile-img-card" src="~/Areas/APManage/Images/touxiang.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            @using (Html.BeginForm("Login", "Default", FormMethod.Post, new { @class = "form-signin" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <p style="color:red">
+                    @Html.ValidationMessage("Username")
+                </p>
+                @Html.TextBoxFor(model => model.LoginUserDto.Username, new { @Class = "form-control", placeholder = "User name", required = "required", autofocus = "autofocus" })
+
+                <p style="color:red">
+                    @Html.ValidationMessage("Userpwd")
+                </p>
+                @Html.PasswordFor(model => model.LoginUserDto.Userpwd, new { @Class = "form-control", placeholder = "Password", required = "required" })
+
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Log In</button>
+                }
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+</div>
+    </div>
+</body>
+</html>
+
+

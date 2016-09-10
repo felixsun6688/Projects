@@ -1,0 +1,9 @@
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\obj\Debug\AorangiPeak.Infrastructure.csprojResolveAssemblyReference.cache
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\AorangiPeak.Infrastructure.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\AorangiPeak.Infrastructure.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\AorangiPeak.Domain.Core.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\AorangiPeak.Domain.Core.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\obj\Debug\AorangiPeak.Infrastructure.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\obj\Debug\AorangiPeak.Infrastructure.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\Autofac.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Infrastructure\bin\Debug\Autofac.xml

@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+select.form-control, 
+input.form-control,
+textarea.form-control{
+	border-radius:0px;
+	width:100%;
+	max-width:580px;
+	font-size:16px;
+	margin-right:0px;
+}
+
+input.submit{
+	border-radius:0px;
+	width:100%;
+	max-width:580px;
+	background:#26384C;
+	min-width:210px;
+	color:#fff;
+	height:35px;
+}
+
+p.information{
+	line-height:25px;
+	padding-left:15px;
+	padding-right:15px;	
+	font-size:16px;
+}
+
+.form-group{
+	margin:10px 0px 10px 0px;
+}
+
+input.search{
+	background:#A1C5D3;
+	color:#fff;
+	border-radius:0px;
+	width:100%;
+	max-width:580px;
+	min-width:165px;
+	height:35px;
+}

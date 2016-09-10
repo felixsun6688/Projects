@@ -1,0 +1,78 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+select.form-control, 
+input.form-control,
+textarea.form-control{
+	border-radius:0px;
+	width:100%;
+	max-width:580px;
+	font-size:16px;
+	margin-right:0px;
+}
+
+input.submit{
+	border-radius:0px;
+	width:100%;
+	max-width:140px;
+	background:#26384C;
+	color:#fff;
+	height:35px;
+}
+
+.input-group-addon{
+	border-radius:0px;
+}
+
+.title{
+	margin-bottom:40px;
+	margin-top:20px;
+	text-align: center;
+}
+
+.form-group{
+	margin:10px 0px 10px 0px;
+}
+
+.input-group{
+	max-width:580px;
+	min-width:290px;
+}
+
+p.information{
+	line-height:25px;
+	padding-left:15px;
+	padding-right:15px;	
+	font-size:16px;
+}
+
+span.error{
+	color:#A94442;
+}
+
+input.checkbtn{
+	background:#A1C5D3;
+	color:#fff;
+	border-radius:0px;
+	width:100%;
+	max-width:580px;
+	height:35px;
+}
+
+.table_booking {
+    margin-top:25px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+
+@media (max-width: 480px){
+	.dining_banner{
+		display:none;
+	}
+	.menus{
+		margin-left:0px;
+		margin-right:0px;
+	}
+
+}

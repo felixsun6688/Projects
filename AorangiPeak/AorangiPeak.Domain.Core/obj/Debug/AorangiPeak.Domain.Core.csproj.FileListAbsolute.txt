@@ -1,0 +1,5 @@
+E:\MyProject\AorangiPeak\AorangiPeak.Domain.Core\bin\Debug\AorangiPeak.Domain.Core.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Domain.Core\bin\Debug\AorangiPeak.Domain.Core.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Domain.Core\obj\Debug\AorangiPeak.Domain.Core.dll
+E:\MyProject\AorangiPeak\AorangiPeak.Domain.Core\obj\Debug\AorangiPeak.Domain.Core.pdb
+E:\MyProject\AorangiPeak\AorangiPeak.Domain.Core\obj\Debug\AorangiPeak.Domain.Core.csprojResolveAssemblyReference.cache
