@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+
+.foot{
+	background:#12253B; 
+	margin-top:25px;
+	height:auto;
+	margin-bottom:-40px;
+}
+
+.foot hr{
+	width:60%;
+	margin-top:25px; 
+	border:1px solid #919191;
+}
+
+.footmenu{
+	font-size:16px; 
+	color:#919191;
+}
+
+.footmenu a{
+	color:#919191;
+}
+
+.footmenu a:hover{
+	color:#fff;
+}
+
+.soci{
+	margin:0px auto;
+	width:350px;
+	padding-top:10px;
+}
+
+.social{
+	height:40px;
+	margin:0 auto;
+	padding:0px;
+}
+
+.social li{
+	float:left;
+	list-style:none;
+	margin-left:9px;
+	margin-right:9px;
+}
+
+.social li a{
+	height:40px;
+	width:40px;
+	display:block;
+}
+
+.facebook{
+	background:url(../Images/f1.png) no-repeat;
+}
+
+.facebook:visited{
+	background:url(../Images/f1.png) no-repeat;
+}
+
+
+.facebook:hover{
+	background:url(../Images/f.png) no-repeat;
+}
+
+.twitter{
+	background:url(../Images/t1.png) no-repeat;
+}
+
+.twitter:hover{
+	background:url(../Images/t.png) no-repeat;
+}
+
+.insta{
+	background:url(../Images/i1.png) no-repeat;
+}
+
+.insta:hover{
+	background:url(../Images/i.png) no-repeat;
+}
+
+.google{
+	background:url(../Images/g1.png) no-repeat;
+}
+
+.google:hover{
+	background:url(../Images/g.png) no-repeat;
+}
+
+.wechat{
+	background:url(../Images/w1.png) no-repeat;
+}
+
+.wechat:hover{
+	background:url(../Images/w.png) no-repeat;
+}
+
+.sina{
+	background:url(../Images/s1.png) no-repeat;
+}
+
+.sina:hover{
+	background:url(../Images/s.png) no-repeat;
+}
+
+@media (max-width:480px){
+.facebook,.facebook:hover
+{
+	background-size:80% 80%;
+}
+.sina,.sina:hover
+{
+	background-size:80% 80%;
+}
+.wechat,.wechat:hover
+{
+	background-size:80% 80%;
+}
+.google,.google:hover
+{
+	background-size:80% 80%;
+}
+.insta,.insta:hover
+{
+	background-size:80% 80%;
+}
+.twitter,.twitter:hover
+{
+	background-size:80% 80%;
+}
+
+.soci{
+	margin:0px auto;
+	width:100%;
+	padding-top:10px;
+	text-align:center;
+	position:relative;
+}
+
+.soci ul li{
+	float:left;
+	list-style:none;
+	margin-left:0px;
+	margin-right:0px;
+	display:inline;
+	padding:0;
+}
+
+.soci ul{
+	height:30px;
+	marign:0 auto;
+	padding-left:45px;
+}
+
+}
+
+/* iphone 6*/
+@media (min-width:375px) and (max-width:414px){
+	.soci ul{
+	padding-left:75px;
+}
+
+}
+
+/* iphone 6*/
+@media (min-width:360px) and (max-width:375px){
+	.soci ul{
+	padding-left:55px;
+}
+
+}
+
+/* Galaxy s5*/
+@media (min-width:320px) and (max-width:360px){
+	.soci ul{
+	padding-left:45px;
+}
+
+}
+
+/* iphone 5*/
+@media (max-width:320px){
+	.soci ul{
+	padding-left:25px;
+}
+
+}
