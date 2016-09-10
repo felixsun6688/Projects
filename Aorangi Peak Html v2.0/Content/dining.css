@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "Site.css";
+@import "heading.css";
+@import "stickup.css";
+@import "foot.css";
+
+.dining_banner{
+	margin-top:-20px;
+}
+
+.menus{
+	margin-top:-80px;
+	margin-left:250px;
+	margin-right:250px;
+	height:auto;
+	display:block;
+	position:relative;
+	background:#fff;
+}
+
+.inline_nav{
+	padding:15px 20px 5px 20px; 
+}
+
+.col-lg-4{
+	padding-right:10px;
+	padding-left:10px;
+	padding-bottom:20px;
+}
+
+.menu_text{
+	background:#12253B;
+	color:#fff;
+	display:block;
+	padding:10px 32px 32px 32px;
+	height:250px;
+}
+
+.menu_text p{
+	text-align:center;
+}
+
+.menu_text h3{
+	pading:10px auto;
+	text-align:center;
+}
+
+.menu_text 	button{
+	width:100px;
+	margin-top:20px;
+	border-radius:0px;
+	background:#A1C5D3;
+}
+
+.menutitle{
+	text-align:center;
+	padding-top:20px;
+	padding-bottom:30px;
+}
+p.itemtitle .title1{
+	color:#CA0C30;
+	font-size:22px;
+	font-weight:bold;
+}
+
+p.desc{ 
+	font-style:italic;
+	font-size:20px;
+	font-family:'Times New Roman', Times, serif;
+}
+
+.list-group-item{
+	border:none;
+	background:#fbfbfc;
+}
+
+.foodname{
+	font-weight:bold;
+	font-size:20px;
+	font-family:'Times New Roman', Times, serif;
+}
+
+.foodprice{
+	font-size:20px;
+	margin-left:20px;
+}
+
+.share_btn{
+	color:#999;
+}
+
+.share_btn:hover{
+	color:#5a5a5a;
+	text-decoration:none;
+}
+
+.share_btn:visited{
+	color:#999;
+	text-decoration:none;
+}
+
+.learn_more{
+	background:#955A30;
+    border-radius: 0px; 
+	color:#FFF;
+	border: none;
+}
+
+.learn_more:hover{
+	background:#54301A;
+	color:#FFF;
+}
+
+@media (max-width: 480px){
+	.dining_banner{
+		display:none;
+	}
+	.menus{
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:-25px;
+	}
+	
+}
+
+
+@media (max-width:768px){
+	.menus{
+		margin-left:0px;
+		margin-right:0px
+	}
+	.col-lg-4{
+		width:100%;
+		float:left;
+	}
+	.menu_text h3{
+		font-size:20px;
+	}
+	.menutitle{
+		font-size:16px;
+	}
+}
+
+@media (min-width: 768px){
+	.menus{
+		margin-left:50px;
+		margin-right:50px
+	}
+	.col-lg-4{
+		width:50%;
+		float:left;
+	}
+	.menu_text h3{
+		font-size:20px;
+	}
+}
+
+@media (min-width: 960px){
+	.menus{
+		margin-left:100px;
+		margin-right:100px
+	}
+	.col-lg-4{
+		width:50%;
+		float:left;
+	}
+	.menu_text h3{
+		font-size:20px;
+	}
+}
+
+@media (min-width: 1280px){
+	.menus{
+		margin-left:250px;
+		margin-right:250px
+	}
+	
+	.col-lg-4{
+		width:33.333%;
+		float:left;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,452 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "Site.css";
+@import "heading.css";
+@import "stickup.css";
+@import "foot.css";
+
+.carousel-caption a{
+	margin-top:50px;
+	color: #fff;
+    background-color: #26384C;
+    border-color: #fff;
+	opacity:0.5;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.carousel-caption{
+	text-shadow:none;
+	position:absolute;
+	top: 40%;
+    left: 20%;	
+}
+
+.carousel-caption p{
+	font-size:16px;
+	font-family:'Lucida Calligraphy';
+}
+
+.carousel-caption a:hover{
+	opacity:0.8;
+	color: #fff;
+}
+
+.dining{
+		display:block; 
+		margin-top:0px; 
+		width:100%; 
+		position:relative;
+		overflow: hidden;
+}
+
+.dining1{
+	text-align:center; 
+	width:100%; 
+	height:345px;
+	z-index:21; 
+	background:#fff; 
+	padding:112px 32px 96px 32px;
+}
+
+.dining1 p{
+	max-width:860px; 
+	margin:50px auto;
+}
+
+.dining1 h3{
+	font-family:"Times New Roman", Times, serif;
+}
+
+.dining2{
+	background:#12253B;
+	position:absolute;
+	display:block;
+	left:0;
+	height:200%;
+	transform:rotate(8.5deg);
+	z-index:20; 
+	width:40%;
+	float:left;
+	margin-left: 0%;
+    margin-right: 0%;
+	transform-origin:120% 130%;
+}
+
+.dining3{
+	width:45%;
+	height:100%;
+	z-index:21;
+	position:absolute;
+}
+
+.dining4{
+	width:55%;
+	height:500px;
+	right:0;
+	float:right;
+	display: block;
+	position:relative;
+	margin-left: 0%;
+    margin-right: 0%;	
+}
+
+.dining3 h3{
+	margin-top:15%; 
+	left:15%; 
+	text-align:center; 
+	color:#fff;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.dining-text{
+	max-width:70%; 
+	text-align:center; 
+	margin:5% auto;
+	color:#fff;
+	width:80%;
+}
+
+.dining-img{
+	right:0; 
+	z-index:19;
+	width:100%;
+	height:100%;
+}
+
+.room2{
+	background:#12253B;
+	transform-origin:-20% 130%;
+	float:right;
+	position:absolute;
+	display:block;
+	right:0;height:100%;
+	transform:rotate(-8.5deg);
+	z-index:20; 
+	width:40%;
+	height:200%;
+	margin-left: 0%;
+    margin-right: 0%;
+}
+
+.room3{
+	width:45%;
+	height:100%;
+	z-index:21;
+	position:absolute;
+	right:0px;
+}
+
+.room4{
+	width:55%;
+	height:500px;
+	right:0;
+	float:left;
+	display: block;
+	position:relative;
+	margin-left: 0%;
+    margin-right: 0%;
+}
+
+.room3 h3{
+	margin-top:15%; 
+	left:15%; 
+	text-align:center; 
+	color:#fff;
+	font-family:"Times New Roman", Times, serif;
+}
+
+.room-text{
+	max-width:70%; 
+	text-align:center; 
+	margin:50px auto;
+	color:#fff;
+}
+
+.room-img{
+	left:0;
+	position:absolute; 
+	z-index:17; 
+	margin-top:690px;
+}
+
+.carousel{z-index:21}
+
+.attraction{
+	display:block; 
+	margin-top:0px; 
+	width:100%; 
+	position:relative;
+	overflow: hidden;
+}
+
+.more_btn{
+	background:#A1C5D3;
+	border-radius:0px;
+}
+
+.left_arrow{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+
+.right_arrow{
+	position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+
+.learn_more{
+	width:147px;
+	height:50px;
+	border-radius:0px;
+	padding-top:14px;
+}
+
+.btns{
+	display:none;
+}
+
+.carousel-caption h2{
+	font-family:"Times New Roman", Times, serif;
+}
+
+.slide_item{
+	position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+.slide_item > img,
+.slide_item > a > img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  line-height: 1;
+}
+.swiper-container {
+  height:100%;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+  margin-bottom:-120px;
+}
+
+body {
+    height: 100% !important;
+}
+html {
+    height: 100% !important;
+}
+
+
+*{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.content-slide {
+  padding: 20px;
+  color: #fff;
+}
+.title {
+  font-size:25px;
+  margin-bottom: 10px;
+}
+.pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:15%;
+  width: 100%;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #999;
+  box-shadow: 0px 1px 2px #555 inset;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+
+.swiper-wrapper,.carousel-inner{
+		margin-top:0%;
+	}
+.learn_more{
+	background:#955A30;
+    border-radius: 0px; 
+	color:#FFF;
+	border: none;
+	padding-bottom:12px;
+}
+
+.learn_more:hover{
+	background:#54301A;
+	color:#FFF;
+}
+
+@media (min-width: 960px) and (max-width: 1024px){
+	.dining{
+		display:block; 
+	}
+	
+	.dining2{
+		transform-origin:200% 150%;
+	}
+	
+	.room2{
+		transform-origin:-20% 130%;
+	}
+	
+	.swiper-container {
+		max-height:450px;
+	}
+
+	.logo {
+    	width: 100%;
+	}
+	.navbar-header{
+		width:10%;
+	}
+	.navbar-collapse{
+		margin-top:3%;
+	}
+	.navbar-brand{
+		padding:0;
+	}
+	.swiper-wrapper,.carousel-inner{
+		margin-top:-7%;
+	}
+	.dropdown{
+		float:right;
+		margin-right:-40px;
+		margin-top:-45px;
+	}
+	.dining3,.room3{
+		margin-top:-3%;
+	}
+}
+
+@media (min-width:480px) and (max-width:768px){
+	.carousel-caption p,h2{
+		display:none !important;
+	}
+	
+	.dining1{ 
+		height:200px; 
+		display:block;
+		padding:20px 32px 16px 32px; 
+	}
+	
+	.dining2{
+		transform-origin:200% 75%;
+	}
+	
+	.room2{
+		transform-origin:-20% 75%;
+	}
+	
+	.swiper-container {
+		max-height:345px;
+		margin-bottom:0px;
+	}
+	.swiper-wrapper{
+
+		margin-top:0px !important;
+
+	}
+	.pagination{
+		  bottom:15px;
+	}
+	.left_arrow, .right_arrow{
+		top: 30%;
+	}
+	.dining-text{
+		display:none;
+	}
+
+	.dining3 h3,.room3 h3{
+		font-size:20px;
+	}
+	.more_btn{
+		font-size:12px;
+		margin-top:5%;
+	}
+	
+}
+
+@media (max-width:480px){
+	.carousel-caption p,h2{
+		display:none;
+	}
+	
+	.slide_item>img, .slide_item>a>img{
+
+	}
+	.dining1 {
+		height: 200px !important;
+		display: block;
+		padding: 20px 32px 16px 32px !important;
+	}
+	.attraction,.dining,.left_arrow,.right_arrow{
+		display:none;
+	}
+	
+	.dining1 p {
+		max-width: 860px;
+		margin: 20px auto;
+	}
+	
+	.btns{
+		display:block;	
+		margin-top:10px;
+	}
+	
+	.btn-menu{
+		border-radius:0px;
+		width:100%;
+		background:#26384C;
+		color:#fff;
+		height:35px;
+		margin-bottom:5px;
+	}
+	.swiper-container {
+		max-height:215px;
+		margin-bottom:0px;
+	}
+	.swiper-wrapper{
+		margin-top:0px !important;
+	}
+	.pagination{
+		  bottom:10%;
+	}
+	
+	.left_arrow, .right_arrow{
+		top: 30%;
+	}	
+	
+	.logo{
+		width:50%;
+	}
+}
+
+@media (min-width: 768px){
+	.dining2{
+		transform-origin:200% 110%;
+	}
+	
+	.room2{
+		transform-origin:-20% 100%;
+	}
+}
+

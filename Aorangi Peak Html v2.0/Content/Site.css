@@ -1,0 +1,59 @@
+﻿body {
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.menuItem,.active,.reservation a{
+	font-family:"Times New Roman", Times, serif;
+}
+
+.langugeitem span a{
+	color:#000;
+}
+
+.langugeitem span a:hover{
+	color:#fff;
+	text-decoration:none;
+}
+
+.gotoTop{
+	height: 40px;
+    width: 40px;
+	background:#3d5a83;
+    border-radius: 0px;
+    position:relative;
+    bottom: -20px;
+    right: 3%;
+	z-index:100;
+	border:none;
+	padding-top:10px;
+	opacity:0.5;
+}
+
+.gotoTop:hover{
+	background:#12253B;
+	opacity:1;
+}
+
+.gotoTop:visited{
+	background:#3d5a83;
+}

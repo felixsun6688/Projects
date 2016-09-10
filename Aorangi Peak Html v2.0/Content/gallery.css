@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	
+}
+
+.photo{
+	position: relative;
+}
+
+.photo img:hover{
+	cursor:pointer;
+}
+
+.photo:hover .title{
+	display:block;	
+	cursor:pointer;
+}
+
+.title{
+	position: absolute;
+	height:20%;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	background:#12253B; 
+	opacity: 0.5;
+	filter:Alpha(opacity=50);
+	display:none;
+}
+
+.txt p{
+	padding-top:5px;
+ 	color:#fff;
+	text-align: center;
+	font-size:14px;
+}
+
+.txt{
+	position: absolute;
+	height:15%;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	display:none;
+}
+
+.photo:hover .txt{
+	display:block;	
+	cursor:pointer;
+}
+
+.photos {
+	margin:auto;
+	font-size:0px;
+}
+		
+.controls{          
+	width:150px;
+	display:block;
+	font-size:11px;
+	padding-top:8px;
+	padding-bottom:8px;
+	font-weight:bold;          
+}
+		
+.modal-body {
+    padding:5px !important;
+}
+
+.modal-content {  
+	border-radius:0;
+}
+
+.modal-dialog img {
+	text-align:center;
+	margin:0 auto;
+}
+		
+.next {
+	font-size:18px;
+	padding-right:10px;
+	float:right;
+	text-align:right;
+}
+
+.previous {
+	font-size:18px;
+	padding-left:10px;
+	float:left;
+	text-align:left;
+}
+      /*override modal for demo only*/
+.modal-dialog {
+     padding-top: 90px;
+}
+	  
+@media screen and (min-width: 768px){
+	.modal-dialog {
+    	padding-top: 150px;
+    }          
+}
